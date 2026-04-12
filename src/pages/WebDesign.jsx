@@ -28,9 +28,9 @@ const faqs = [
 ]
 
 const portfolio = [
-  { name: 'Shelly Tap and Grill', industry: 'Restaurant', result: 'New site + 40% more reservations' },
-  { name: 'Larita Hotel', industry: 'Hospitality', result: 'Full redesign + direct booking system' },
-  { name: 'Maple Leaf Inn', industry: 'Hospitality', result: '2.1× direct bookings year-over-year' },
+  { name: 'Shelly Tap and Grill', industry: 'Restaurant', result: 'New site + 40% more reservations', img: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Restaurant with warm ambiance' },
+  { name: 'Larita Hotel', industry: 'Hospitality', result: 'Full redesign + direct booking system', img: 'https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Hotel exterior at dusk' },
+  { name: 'Maple Leaf Inn', industry: 'Hospitality', result: '2.1× direct bookings year-over-year', img: 'https://images.pexels.com/photos/2417842/pexels-photo-2417842.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Cozy inn exterior in autumn' },
 ]
 
 export default function WebDesign() {
@@ -130,7 +130,7 @@ export default function WebDesign() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-4)' }}>
             {portfolio.map(p => (
               <div key={p.name} className="sp-feat-card" style={{ gap: 'var(--space-3)' }}>
-                <div style={{ height: '140px', background: 'var(--color-bg-warm)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--text-2xl)' }}>🖥</div>
+                <img src={p.img} alt={p.alt} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
                 <h3 className="sp-feat-card__title">{p.name}</h3>
                 <span className="badge">{p.industry}</span>
                 <p className="sp-feat-card__desc">{p.result}</p>
