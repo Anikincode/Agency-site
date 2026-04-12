@@ -32,7 +32,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Agency-site">
       <Navbar />
       <Routes>
         {/* Core */}
