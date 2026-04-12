@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Anikin Technologies</title>
+    <script type="text/javascript">
+      var pathSegment = window.location.pathname.split('/')[2]; 
+      sessionStorage.redirect = window.location.href;
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/Agency-site/'
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
