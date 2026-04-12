@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom' // Removed BrowserRouter from here
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Home from './pages/Home';
 // ... all your page imports stay the same
 
 function NotFound() {
