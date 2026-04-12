@@ -1,24 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom' // Removed BrowserRouter from here
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-
-// Pages
-import Home from './pages/Home'
-import Services from './pages/Services'
-import WebDesign from './pages/WebDesign'
-import SEOPage from './pages/SEO'
-import GoogleAds from './pages/GoogleAds'
-import Work from './pages/Work'
-import Knowledge from './pages/Knowledge'
-import BlogPost from './pages/BlogPost'
-import Company from './pages/Company'
-import Contact from './pages/Contact'
-import Careers from './pages/Careers'
-import FreeWebsite from './pages/FreeWebsite'
-import SEOPackages from './pages/SEOPackages'
-import SmallBizSEO from './pages/SmallBizSEO'
-import SEOTrends from './pages/SEOTrends'
-import { PrivacyPolicy, Terms, Accessibility } from './pages/Legal'
+// ... all your page imports stay the same
 
 function NotFound() {
   return (
@@ -32,7 +15,8 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/Agency-site">
+    // REMOVED <BrowserRouter> from here
+    <>
       <Navbar />
       <Routes>
         {/* Core */}
@@ -71,6 +55,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
+    // REMOVED </BrowserRouter> from here
   )
 }
