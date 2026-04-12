@@ -17,6 +17,7 @@ import FreeWebsite from './pages/FreeWebsite'
 import SEOPackages from './pages/SEOPackages'
 import SmallBizSEO from './pages/SmallBizSEO'
 import SEOTrends from './pages/SEOTrends'
+import Industries from './pages/Industries'
 import { PrivacyPolicy, Terms, Accessibility } from './pages/Legal'
 
 function NotFound() {
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/web-design-etobicoke" element={<WebDesign />} />
         <Route path="/services/search-engine-optimization" element={<SEOPage />} />
         <Route path="/google-ads" element={<GoogleAds />} />
+        <Route path="/industries" element={<Industries />} />
 
         <Route path="/company" element={<Company />} />
         <Route path="/about" element={<Navigate to="/company" replace />} />

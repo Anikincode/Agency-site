@@ -26,9 +26,9 @@
   transition: box-shadow var(--t-base), transform var(--t-base), border-color var(--t-base);
 }
 .kb-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--color-accent); }
-.kb-card--featured { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: var(--space-10); background: var(--color-bg-soft); }
-.kb-card--featured .kb-card__title { font-size: var(--text-3xl); }
-.kb-card--featured .kb-card__excerpt { font-size: var(--text-base); }
+.kb-card--featured { grid-column: 1 / -1; flex-direction: column; background: var(--color-bg-soft); }
+.kb-card--featured .kb-card__title { font-size: var(--text-2xl); }
+.kb-card--featured .kb-card__excerpt { font-size: var(--text-base); max-width: 640px; }
 
 .kb-card__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
 .kb-card__read { font-size: var(--text-xs); color: var(--color-text-light); font-weight: 500; }
