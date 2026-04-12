@@ -1,8 +1,27 @@
-import { Routes, Route, Navigate } from 'react-router-dom' // Removed BrowserRouter from here
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home';
-// ... all your page imports stay the same
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { lazy, Suspense } from 'react'; // Added lazy and Suspense
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+// Pages - Lazy load the Home component to prevent ReferenceErrors
+const Home = lazy(() => import('./pages/Home'));
+
+// Standard imports for other pages
+import Services from './pages/Services';
+import WebDesign from './pages/WebDesign';
+import SEOPage from './pages/SEO';
+import GoogleAds from './pages/GoogleAds';
+import Work from './pages/Work';
+import Knowledge from './pages/Knowledge';
+import BlogPost from './pages/BlogPost';
+import Company from './pages/Company';
+import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+import FreeWebsite from './pages/FreeWebsite';
+import SEOPackages from './pages/SEOPackages';
+import SmallBizSEO from './pages/SmallBizSEO';
+import SEOTrends from './pages/SEOTrends';
+import { PrivacyPolicy, Terms, Accessibility } from './pages/Legal';
 
 function NotFound() {
   return (
@@ -11,52 +30,53 @@ function NotFound() {
       <p style={{ fontSize: 'var(--text-lg)', color: 'var(--color-text-muted)' }}>Page not found.</p>
       <a href="/" className="btn btn--primary btn--lg" style={{ marginTop: '1rem' }}>Go Home</a>
     </main>
-  )
+  );
 }
 
 export default function App() {
   return (
-    // REMOVED <BrowserRouter> from here
     <>
       <Navbar />
-      <Routes>
-        {/* Core */}
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/web-design-etobicoke" element={<WebDesign />} />
-        <Route path="/services/search-engine-optimization" element={<SEOPage />} />
-        <Route path="/google-ads" element={<GoogleAds />} />
+      {/* Suspense handles the "Waiting" state for lazy-loaded components */}
+      <Suspense fallback={<div style={{ minHeight: '100vh', background: '#000' }}></div>}>
+        <Routes>
+          {/* Core */}
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/web-design-etobicoke" element={<WebDesign />} />
+          <Route path="/services/search-engine-optimization" element={<SEOPage />} />
+          <Route path="/google-ads" element={<GoogleAds />} />
 
-        {/* Company */}
-        <Route path="/company" element={<Company />} />
-        <Route path="/about" element={<Navigate to="/company" replace />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/careers" element={<Careers />} />
+          {/* Company */}
+          <Route path="/company" element={<Company />} />
+          <Route path="/about" element={<Navigate to="/company" replace />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/careers" element={<Careers />} />
 
-        {/* Knowledge / Blog */}
-        <Route path="/knowledge" element={<Knowledge />} />
-        <Route path="/post/:slug" element={<BlogPost />} />
+          {/* Knowledge / Blog */}
+          <Route path="/knowledge" element={<Knowledge />} />
+          <Route path="/post/:slug" element={<BlogPost />} />
 
-        {/* Contact */}
-        <Route path="/contacts" element={<Contact />} />
-        <Route path="/contact" element={<Navigate to="/contacts" replace />} />
+          {/* Contact */}
+          <Route path="/contacts" element={<Contact />} />
+          <Route path="/contact" element={<Navigate to="/contacts" replace />} />
 
-        {/* Landing pages */}
-        <Route path="/free-website" element={<FreeWebsite />} />
-        <Route path="/affordable-seo-packages" element={<SEOPackages />} />
-        <Route path="/small-business-seo-packages" element={<SmallBizSEO />} />
-        <Route path="/seo-trends" element={<SEOTrends />} />
+          {/* Landing pages */}
+          <Route path="/free-website" element={<FreeWebsite />} />
+          <Route path="/affordable-seo-packages" element={<SEOPackages />} />
+          <Route path="/small-business-seo-packages" element={<SmallBizSEO />} />
+          <Route path="/seo-trends" element={<SEOTrends />} />
 
-        {/* Legal */}
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<Terms />} />
-        <Route path="/accessibility-statement" element={<Accessibility />} />
+          {/* Legal */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<Terms />} />
+          <Route path="/accessibility-statement" element={<Accessibility />} />
 
-        {/* Catch-all */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* Catch-all */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </>
-    // REMOVED </BrowserRouter> from here
-  )
+  );
 }
