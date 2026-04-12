@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Anikin Technologies</title>
-  <script>
-    // GitHub Pages SPA redirect hack — redirects 404s back to index with the path preserved
-    // Strips the repo base path (/Agency-site) before encoding so App.jsx can restore it
-    var base = '/Agency-site';
-    var path = window.location.pathname.replace(base, '') || '/';
-    var search = window.location.search;
-    var hash = window.location.hash;
-    window.location.replace(
-      window.location.origin + base + '/?p=' + encodeURIComponent(path + search + hash)
-    );
-  </script>
-</head>
-<body></body>
+  <head>
+    <meta charset="utf-8">
+    <title>Anikin Technologies</title>
+    <script type="text/javascript">
+      var pathSegment = window.location.pathname.split('/')[2]; 
+      sessionStorage.redirect = window.location.href;
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/Agency-site/'
+      );
+    </script>
+  </head>
+  <body>
+  </body>
 </html>
