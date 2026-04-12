@@ -9,6 +9,68 @@
       name="description"
       content="Anikin Technologies helps local businesses in Etobicoke and Toronto get found on Google through SEO, web design, and Google Ads."
     />
+
+    <!-- Static OG tags (fallback before React renders) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anikin Technologies" />
+    <meta property="og:title" content="SEO, Web Design &amp; Google Ads in Etobicoke | Anikin Technologies" />
+    <meta property="og:description" content="Anikin Technologies helps local businesses in Etobicoke &amp; Toronto rank on Google, run profitable ads, and build websites that convert. Free demo available." />
+    <meta property="og:image" content="https://www.anikin.ca/og-image.jpg" />
+    <meta property="og:url" content="https://www.anikin.ca/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SEO, Web Design &amp; Google Ads in Etobicoke | Anikin Technologies" />
+    <meta name="twitter:description" content="Anikin Technologies helps local businesses in Etobicoke &amp; Toronto rank on Google, run profitable ads, and build websites that convert. Free demo available." />
+    <meta name="twitter:image" content="https://www.anikin.ca/og-image.jpg" />
+    <link rel="canonical" href="https://www.anikin.ca/" />
+
+    <!-- Static JSON-LD: LocalBusiness + ProfessionalService (visible to Googlebot before JS renders) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "name": "Anikin Technologies",
+      "url": "https://www.anikin.ca",
+      "telephone": "+16479822545",
+      "email": "kirill.s.anikin@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "451 The West Mall, Apt 620",
+        "addressLocality": "Etobicoke",
+        "addressRegion": "ON",
+        "postalCode": "M9C 1G1",
+        "addressCountry": "CA"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 43.6435, "longitude": -79.5646 },
+      "areaServed": ["Etobicoke", "Toronto", "Mississauga", "North York", "Scarborough"],
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.linkedin.com/company/anikintechnologies",
+        "https://www.instagram.com/anikintechnologies",
+        "https://www.facebook.com/anikintechnologies"
+      ],
+      "description": "Digital marketing agency in Etobicoke specializing in local SEO, web design, and Google Ads for local service businesses across the GTA.",
+      "logo": "https://www.anikin.ca/favicon.svg"
+    }
+    </script>
+
+    <!-- Static JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.anikin.ca",
+      "name": "Anikin Technologies",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.anikin.ca/knowledge/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
