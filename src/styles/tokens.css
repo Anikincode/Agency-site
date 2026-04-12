@@ -1,0 +1,88 @@
+:root {
+  /* ── Brand Colors ──────────────────────────────────── */
+  --color-accent:       #1a56ff;
+  --color-accent-hover: #0f40d4;
+  --color-accent-light: rgba(26, 86, 255, 0.08);
+  --color-accent-mid:   rgba(26, 86, 255, 0.15);
+
+  /* ── Neutrals ──────────────────────────────────────── */
+  --color-bg:           #f8f3f0;
+  --color-bg-soft:      #f8f7f5;
+  --color-bg-warm:      #f1ede8;
+  --color-bg-dark:      #0f0f0f;
+  --color-bg-dark-2:    #161616;
+
+  --color-text:         #0e0e0e;
+  --color-text-muted:   #444444;
+  --color-text-light:   #7a7a7a;
+  --color-text-inv:     #ffffff;
+  --color-text-inv-muted: rgba(255,255,255,0.55);
+
+  --color-border:       #e8e4df;
+  --color-border-soft:  #f0ece7;
+  --color-border-dark:  rgba(255,255,255,0.08);
+
+  /* ── Typography ────────────────────────────────────── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px */
+  --text-6xl:  3.75rem;    /* 60px */
+  --text-7xl:  4.5rem;     /* 72px */
+  --text-8xl:  6rem;       /* 96px */
+
+  /* ── Spacing ───────────────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+
+  /* ── Border Radius ─────────────────────────────────── */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-2xl:  40px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ───────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-xl: 0 24px 80px rgba(0,0,0,0.12);
+  --shadow-glow: 0 0 0 3px rgba(26,86,255,0.12);
+
+  /* ── Transitions ───────────────────────────────────── */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast:     150ms var(--ease-out);
+  --t-base:     250ms var(--ease-out);
+  --t-slow:     400ms var(--ease-out);
+
+  /* ── Layout ────────────────────────────────────────── */
+  --max-width:    1200px;
+  --max-width-sm: 760px;
+  --nav-height:   68px;
+
+  /* ── Pro Max: Section rhythm ───────────────────────── */
+  --section-y: clamp(5rem, 10vw, 8rem);
+}
