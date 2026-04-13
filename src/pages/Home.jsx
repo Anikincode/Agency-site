@@ -53,7 +53,6 @@ const services = [
   { Icon: MonitorIcon, title: 'Web Design', desc: 'Conversion-focused sites built for local businesses. Fast, beautiful, and SEO-ready from day one.', href: '/web-design-etobicoke', tag: 'From $2,500' },
   { Icon: SearchIcon, title: 'Local SEO', desc: 'Rank on page one for searches in your city. We handle everything from keywords to technical fixes.', href: '/services/search-engine-optimization', tag: 'From $1,000/mo' },
   { Icon: TargetIcon, title: 'Google Ads', desc: 'Pay-per-click campaigns built for trades and service businesses. Maximum leads, minimum waste.', href: '/google-ads', tag: 'ROI-focused' },
-  { Icon: MapPinIcon, title: 'Google Business Profile', desc: 'Show up in the map pack. We optimize your GBP so local searchers find you first.', href: '/services/search-engine-optimization', tag: 'Included in SEO' },
 ]
 
 const results = [
