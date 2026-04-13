@@ -1,12 +1,41 @@
 import { useState } from 'react'
+import { supabase } from '../lib/supabase'
 import './Contact.css'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', business: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
-  const handleSubmit = e => { e.preventDefault(); setSubmitted(true) }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
+
+    const { error: sbError } = await supabase
+      .from('contact_submissions')
+      .insert([{
+        name: form.name,
+        email: form.email,
+        phone: form.phone || null,
+        business: form.business || null,
+        service: form.service || null,
+        message: form.message || null,
+      }])
+
+    setLoading(false)
+
+    if (sbError) {
+      setError('Something went wrong. Please try again or email us directly.')
+      console.error(sbError)
+      return
+    }
+
+    setSubmitted(true)
+  }
 
   return (
     <main>
@@ -87,7 +116,12 @@ export default function Contact() {
                 <label htmlFor="message">Tell us about your business</label>
                 <textarea id="message" name="message" rows="4" placeholder="What do you do, where are you located, and what's the goal?" value={form.message} onChange={handleChange} />
               </div>
-              <button type="submit" className="btn btn--primary btn--lg" style={{ width: '100%' }}>Book Your Free Demo</button>
+              {error && (
+                <p style={{ color: '#e53e3e', fontSize: 'var(--text-sm)', textAlign: 'center' }}>{error}</p>
+              )}
+              <button type="submit" className="btn btn--primary btn--lg" style={{ width: '100%' }} disabled={loading}>
+                {loading ? 'Sending…' : 'Book Your Free Demo'}
+              </button>
               <p style={{ textAlign: 'center', fontSize: 'var(--text-xs)', color: 'var(--color-text-light)' }}>No commitment. No hard sell. Just a look at where you stand.</p>
             </form>
           )}
