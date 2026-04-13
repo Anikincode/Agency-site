@@ -29,30 +29,83 @@ const localBusinessSchema = {
   description: 'Digital marketing agency in Etobicoke specializing in local SEO, web design, and Google Ads for local service businesses across the GTA.',
 }
 
-/* ─── Icons (defined before data that references them) ───────────────── */
-function MonitorIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-}
-function SearchIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-}
-function TargetIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-}
-function MapPinIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-}
+/* ─── Icons ───────────────────────────────────────────────────────────── */
 function ArrowRight() {
   return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+}
+
+/* Service illustration icons — large, filled/duotone style */
+function WebDesignIllu() {
+  return (
+    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Monitor body */}
+      <rect x="10" y="14" width="76" height="50" rx="8" fill="#d4c9be" />
+      <rect x="16" y="20" width="64" height="38" rx="4" fill="#f8f3f0" />
+      {/* Screen content lines */}
+      <rect x="22" y="27" width="28" height="5" rx="2.5" fill="#1a56ff" opacity="0.7"/>
+      <rect x="22" y="36" width="52" height="3" rx="1.5" fill="#c8bfb5"/>
+      <rect x="22" y="42" width="40" height="3" rx="1.5" fill="#c8bfb5"/>
+      <rect x="22" y="48" width="48" height="3" rx="1.5" fill="#c8bfb5"/>
+      {/* Stand */}
+      <rect x="40" y="64" width="16" height="10" rx="2" fill="#c8bfb5"/>
+      <rect x="30" y="74" width="36" height="6" rx="3" fill="#b8afa5"/>
+      {/* Cursor */}
+      <circle cx="66" cy="35" r="5" fill="#1a56ff" opacity="0.85"/>
+      <circle cx="66" cy="35" r="3" fill="#fff"/>
+    </svg>
+  )
+}
+
+function SEOIllu() {
+  return (
+    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Phone body */}
+      <rect x="26" y="8" width="44" height="74" rx="10" fill="#d4c9be"/>
+      <rect x="30" y="14" width="36" height="60" rx="6" fill="#f8f3f0"/>
+      {/* Search bar */}
+      <rect x="34" y="20" width="28" height="8" rx="4" fill="#e8e0d8"/>
+      <circle cx="38" cy="24" r="2.5" fill="#9a9188"/>
+      {/* Chart bars */}
+      <rect x="34" y="36" width="6" height="18" rx="2" fill="#c8bfb5"/>
+      <rect x="43" y="30" width="6" height="24" rx="2" fill="#1a56ff" opacity="0.5"/>
+      <rect x="52" y="34" width="6" height="20" rx="2" fill="#c8bfb5"/>
+      <rect x="61" y="26" width="5" height="28" rx="2" fill="#1a56ff" opacity="0.85"/>
+      {/* Home button */}
+      <rect x="40" y="78" width="16" height="4" rx="2" fill="#b8afa5"/>
+      {/* Magnifier overlay */}
+      <circle cx="70" cy="22" r="10" fill="#1a56ff" opacity="0.12"/>
+      <circle cx="70" cy="22" r="6" fill="none" stroke="#1a56ff" strokeWidth="2.5"/>
+      <line x1="74.2" y1="26.2" x2="78" y2="30" stroke="#1a56ff" strokeWidth="2.5" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+function AdsIllu() {
+  return (
+    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Megaphone body */}
+      <path d="M20 38 L20 58 L34 58 L54 72 L54 24 L34 38 Z" fill="#d4c9be"/>
+      <rect x="14" y="38" width="22" height="20" rx="4" fill="#b8afa5"/>
+      {/* Sound waves */}
+      <path d="M60 36 Q68 48 60 60" stroke="#1a56ff" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M66 30 Q78 48 66 66" stroke="#1a56ff" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.35"/>
+      {/* Coins */}
+      <circle cx="76" cy="22" r="9" fill="#f0c040"/>
+      <text x="76" y="26" textAnchor="middle" fontSize="11" fontWeight="700" fill="#a07800">$</text>
+      <circle cx="82" cy="38" r="7" fill="#f0c040" opacity="0.8"/>
+      <text x="82" y="42" textAnchor="middle" fontSize="9" fontWeight="700" fill="#a07800">$</text>
+      <circle cx="68" cy="14" r="5" fill="#f0c040" opacity="0.6"/>
+    </svg>
+  )
 }
 
 /* ─── Data ───────────────────────────────────────────────────────────── */
 const clients = ['NOA Hospitality', 'Clima-Cool', 'Maple Leaf Inn', 'DrainRooter', 'Seacliff Capital']
 
 const services = [
-  { Icon: MonitorIcon, title: 'Web Design', desc: 'Conversion-focused sites built for local businesses. Fast, beautiful, and SEO-ready from day one.', href: '/web-design-etobicoke', tag: 'From $2,500' },
-  { Icon: SearchIcon, title: 'Local SEO', desc: 'Rank on page one for searches in your city. We handle everything from keywords to technical fixes.', href: '/services/search-engine-optimization', tag: 'From $1,000/mo' },
-  { Icon: TargetIcon, title: 'Google Ads', desc: 'Pay-per-click campaigns built for trades and service businesses. Maximum leads, minimum waste.', href: '/google-ads', tag: 'ROI-focused' },
+  { Icon: WebDesignIllu, title: 'Web Design', desc: 'Conversion-focused sites built for local businesses. Fast, beautiful, and SEO-ready from day one.', href: '/web-design-etobicoke' },
+  { Icon: SEOIllu, title: 'Local SEO', desc: 'Rank on page one for searches in your city. We handle everything from keywords to technical fixes.', href: '/services/search-engine-optimization' },
+  { Icon: AdsIllu, title: 'Google Ads', desc: 'Pay-per-click campaigns built for trades and service businesses. Maximum leads, minimum waste.', href: '/google-ads' },
 ]
 
 const results = [
@@ -175,23 +228,24 @@ function Clients() {
 /* ─── Services ───────────────────────────────────────────────────────── */
 function Services() {
   return (
-    <section className="section">
+    <section className="section svc-section">
       <div className="container">
-        <div className="section-header">
-          <span className="section-label">What We Do</span>
-          <h2 className="section-title">Everything you need<br />to grow online</h2>
-          <p className="section-sub">We don't offer 20 services. We offer four — done at a level that actually moves the needle for local businesses.</p>
+        <div className="section-header section-header--center">
+          <span className="section-label">Services</span>
+          <h2 className="section-title svc-section__title">
+            How we can<br />help you <em>grow</em>
+          </h2>
         </div>
         <div className="services-grid">
           {services.map(s => (
             <Link key={s.title} to={s.href} className="svc-card">
-              <div className="svc-card__top">
-                <div className="svc-card__icon"><s.Icon /></div>
-                <span className="badge badge--blue">{s.tag}</span>
+              <div className="svc-card__illu">
+                <s.Icon />
               </div>
-              <h3 className="svc-card__title">{s.title}</h3>
-              <p className="svc-card__desc">{s.desc}</p>
-              <span className="svc-card__cta">Learn more <ArrowRight /></span>
+              <div className="svc-card__body">
+                <h3 className="svc-card__title">{s.title}</h3>
+                <p className="svc-card__desc">{s.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
